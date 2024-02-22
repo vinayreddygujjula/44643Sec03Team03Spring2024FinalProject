@@ -16,9 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x3J-BJ-Twz" userLabel="LaunchLAV">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x3J-BJ-Twz" userLabel="LaunchLAV" customClass="LottieAnimationView" customModule="Lottie">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="petMartLaunchLA"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -30,6 +33,9 @@
                             <constraint firstItem="x3J-BJ-Twz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="q94-2D-aWS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="LaunchLAV" destination="x3J-BJ-Twz" id="jsF-1T-9G3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="rhC-CD-Xtz">
