@@ -10,6 +10,7 @@ import Lottie
 
 class ViewController: UIViewController {
     
+    
     @IBOutlet weak var LaunchLAV: LottieAnimationView!
     {
         didSet{
@@ -25,6 +26,7 @@ class ViewController: UIViewController {
             }
         }
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
