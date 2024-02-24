@@ -54,6 +54,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func Login(_ sender: UIButton) {
+    }
+    @IBAction func username(_ sender: Any) {
+    }
+    @IBAction func password(_ sender: UITextField) {
+    }
     
     
 }

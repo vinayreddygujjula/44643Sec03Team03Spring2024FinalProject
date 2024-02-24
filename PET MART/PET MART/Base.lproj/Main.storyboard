@@ -46,6 +46,9 @@
                                                         <rect key="frame" x="0.0" y="23.666666666666629" width="343" height="61"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="username:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="wrr-0S-ee5"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -62,6 +65,9 @@
                                                         <rect key="frame" x="0.0" y="23.666666666666686" width="343" height="61"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="password:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Mwe-kD-1Ty"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -83,6 +89,9 @@
                                                 <buttonConfiguration key="configuration" style="filled" title="Login" cornerStyle="capsule">
                                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="Login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gZq-25-axb"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
