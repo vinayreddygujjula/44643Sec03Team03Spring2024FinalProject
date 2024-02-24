@@ -126,6 +126,14 @@
                     </view>
                     <connections>
                         <outlet property="LaunchLAV" destination="x3J-BJ-Twz" id="jsF-1T-9G3"/>
+                        <outlet property="LoginB" destination="wiO-cc-yqg" id="M2j-AK-X0h"/>
+                        <outlet property="LoginScreening" destination="Xeu-ag-wep" id="4YV-RI-nm2"/>
+                        <outlet property="PasswordTF" destination="vSB-sn-wze" id="bD6-eH-LCb"/>
+                        <outlet property="UsernameSV" destination="udo-VK-Bod" id="33N-ac-JdE"/>
+                        <outlet property="UsernameTF" destination="zgd-Vc-LDD" id="DK9-NE-hA6"/>
+                        <outlet property="emailL" destination="r04-Lg-RjH" id="AZa-S5-9hy"/>
+                        <outlet property="passwordL" destination="aya-M3-0ca" id="KA0-YO-FTj"/>
+                        <outlet property="passwordSV" destination="vSB-sn-wze" id="bhL-7q-Qe9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

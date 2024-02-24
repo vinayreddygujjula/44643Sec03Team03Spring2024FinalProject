@@ -10,6 +10,27 @@ import Lottie
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var LoginScreening: UIImageView!
+    
+    @IBOutlet weak var UsernameSV: UIStackView!
+    
+    
+    @IBOutlet weak var LoginB: UIButton!
+    
+    @IBOutlet weak var PasswordTF: UITextField!
+    
+    
+    @IBOutlet weak var UsernameTF: UITextField!
+    
+    
+    @IBOutlet weak var emailL: UILabel!
+    
+    
+    @IBOutlet weak var passwordL: UILabel!
+    
+    
+    
+    
     
     @IBOutlet weak var LaunchLAV: LottieAnimationView!
     {
