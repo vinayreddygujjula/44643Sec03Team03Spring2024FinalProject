@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A12990962B9A98DC004955FF /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12990932B9A98DC004955FF /* HomeVC.swift */; };
 		A17043CD2B87307A00E0EF5B /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = A17043CC2B87307A00E0EF5B /* Lottie */; };
 		A58ECF2D2B86C19200CD7858 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58ECF2C2B86C19200CD7858 /* AppDelegate.swift */; };
 		A58ECF2F2B86C19200CD7858 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58ECF2E2B86C19200CD7858 /* SceneDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A12990932B9A98DC004955FF /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		A58ECF292B86C19200CD7858 /* PET MART.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PET MART.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A58ECF2C2B86C19200CD7858 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A58ECF2E2B86C19200CD7858 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +41,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A12990912B9A9857004955FF /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				A58ECF2C2B86C19200CD7858 /* AppDelegate.swift */,
+				A58ECF2E2B86C19200CD7858 /* SceneDelegate.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		A12990922B9A986A004955FF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A58ECF302B86C19200CD7858 /* ViewController.swift */,
+				A12990932B9A98DC004955FF /* HomeVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		A58ECF202B86C19200CD7858 = {
 			isa = PBXGroup;
 			children = (
@@ -58,9 +78,8 @@
 		A58ECF2B2B86C19200CD7858 /* PET MART */ = {
 			isa = PBXGroup;
 			children = (
-				A58ECF2C2B86C19200CD7858 /* AppDelegate.swift */,
-				A58ECF2E2B86C19200CD7858 /* SceneDelegate.swift */,
-				A58ECF302B86C19200CD7858 /* ViewController.swift */,
+				A12990912B9A9857004955FF /* SupportingFiles */,
+				A12990922B9A986A004955FF /* ViewControllers */,
 				A58ECF322B86C19200CD7858 /* Main.storyboard */,
 				A58ECF352B86C19300CD7858 /* Assets.xcassets */,
 				A58ECF372B86C19300CD7858 /* LaunchScreen.storyboard */,
@@ -147,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A58ECF312B86C19200CD7858 /* ViewController.swift in Sources */,
+				A12990962B9A98DC004955FF /* HomeVC.swift in Sources */,
 				A58ECF2D2B86C19200CD7858 /* AppDelegate.swift in Sources */,
 				A58ECF2F2B86C19200CD7858 /* SceneDelegate.swift in Sources */,
 			);
