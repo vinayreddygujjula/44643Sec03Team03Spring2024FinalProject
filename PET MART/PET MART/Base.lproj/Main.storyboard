@@ -217,6 +217,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tUt-Ma-i1k"/>
+                    <connections>
+                        <outlet property="ImageIV" destination="rn3-qW-6cm" id="o1N-8t-Lcq"/>
+                        <outlet property="PetBTN" destination="2K3-aX-nlo" id="D9e-4G-jWc"/>
+                        <outlet property="ProductBTN" destination="9Bh-mt-wBW" id="pYa-nv-Ir8"/>
+                        <outlet property="SearchTF" destination="5Fv-EB-5IA" id="pUJ-IH-XOK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZbP-en-M2V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
