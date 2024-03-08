@@ -137,10 +137,10 @@
             </objects>
             <point key="canvasLocation" x="1055.7251908396945" y="-2.1126760563380285"/>
         </scene>
-        <!--View Controller-->
+        <!--HomeVC-->
         <scene sceneID="Hr9-HJ-vAV">
             <objects>
-                <viewController id="j6S-Mc-VXS" sceneMemberID="viewController">
+                <viewController id="j6S-Mc-VXS" customClass="HomeVC" customModule="PET_MART" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0mh-1F-ZXn">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
