@@ -9,6 +9,17 @@ import UIKit
 
 class HomeVC: UIViewController {
 
+    @IBOutlet weak var ImageIV: UIImageView!
+    
+    
+    @IBOutlet weak var SearchTF: UITextField!
+    
+    
+    @IBOutlet weak var PetBTN: UIButton!
+    
+    @IBOutlet weak var ProductBTN: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
