@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4rr-Rx-aNe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4rr-Rx-aNe">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -218,10 +218,10 @@
             </objects>
             <point key="canvasLocation" x="1059" y="827"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign UpVC-->
         <scene sceneID="Q6P-fj-c0b">
             <objects>
-                <viewController id="9Nm-VI-lic" sceneMemberID="viewController">
+                <viewController id="9Nm-VI-lic" customClass="SignUpVC" customModule="PET_MART" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nma-Fo-enk">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -386,6 +386,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="daA-Qx-akS"/>
+                    <connections>
+                        <outlet property="ConfirmpasswordTF" destination="pl8-Rm-tBR" id="gfG-4i-81N"/>
+                        <outlet property="EmailTF" destination="kYY-j6-oll" id="GH1-4k-303"/>
+                        <outlet property="FirstNameTF" destination="aXc-Qn-r9b" id="w7b-87-vbK"/>
+                        <outlet property="LastnameTF" destination="QWj-sO-swc" id="2j7-k0-B6V"/>
+                        <outlet property="PasswordTF" destination="abb-iA-5kU" id="JIL-qQ-Vsv"/>
+                        <outlet property="SignUpBTN" destination="Puv-br-nWU" id="KJA-7f-32W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qwZ-L5-hOW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -412,7 +420,7 @@
     </scenes>
     <resources>
         <image name="LoginScreenImg" width="1920" height="1920"/>
-        <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <image name="cart.fill" catalog="system" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
