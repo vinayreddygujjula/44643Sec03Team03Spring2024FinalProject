@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var passwordL: UILabel!
     
+    @IBOutlet weak var signup: UILabel!
     
     
     
