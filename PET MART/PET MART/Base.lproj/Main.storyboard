@@ -103,7 +103,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="forgot password ?"/>
                                                 <connections>
-                                                    <segue destination="ZAD-7H-wL2" kind="show" id="yGA-xk-9Fy"/>
+                                                    <segue destination="ZAD-7H-wL2" kind="show" id="2tx-v2-8ER"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZN-1u-SXb">
