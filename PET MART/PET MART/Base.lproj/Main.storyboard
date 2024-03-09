@@ -152,7 +152,7 @@
         <!--View Controller-->
         <scene sceneID="0Ks-jm-N22">
             <objects>
-                <viewController id="ZAD-7H-wL2" sceneMemberID="viewController">
+                <viewController id="ZAD-7H-wL2" customClass="ViewController" customModule="PET_MART" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Bg-KF-Stw">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -189,6 +189,9 @@
                                         <rect key="frame" x="0.0" y="730.66666666666663" width="373" height="81.333333333333371"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Send a Code"/>
+                                        <connections>
+                                            <action selector="SendaCode:" destination="ZAD-7H-wL2" eventType="touchUpInside" id="hhy-Z5-3M6"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -208,6 +211,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AEv-xu-5jo"/>
+                    <connections>
+                        <outlet property="EmailTF" destination="POK-2j-EcS" id="14T-gj-pS1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1s4-hT-uE1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

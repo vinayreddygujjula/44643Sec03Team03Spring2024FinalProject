@@ -63,5 +63,9 @@ class ViewController: UIViewController {
     }
     
     
+    @IBOutlet weak var EmailTF: UITextField!
+    
+    @IBAction func SendaCode(_ sender: UIButton) {
+    }
 }
 
