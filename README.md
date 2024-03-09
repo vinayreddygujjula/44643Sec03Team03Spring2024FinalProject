@@ -33,3 +33,6 @@ Application aims to offer consumers a convenient platform for browsing and selec
 ###### Shopping cart page
 - In this screen, user will be able to find the list of products that are added to cart.
 - User will able to check the bill and checkout. 
+
+#### Status
+- 03/08/2024 - Developed UI and navigation for login, signup and home screens 
