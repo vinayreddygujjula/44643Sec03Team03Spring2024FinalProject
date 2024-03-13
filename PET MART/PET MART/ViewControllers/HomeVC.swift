@@ -8,10 +8,11 @@
 import UIKit
 
 class HomeVC: UIViewController {
-
+    
     @IBOutlet weak var ImageIV: UIImageView!
     
-    
+    @IBOutlet weak var ImageScrollView: UIScrollView!
+    var timer: Timer?
     @IBOutlet weak var SearchTF: UITextField!
     
     
@@ -22,11 +23,29 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         self.navigationItem.setHidesBackButton(true, animated: true)
+        
+        
     }
+      
+    
+    
+}
+    
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     /*
     // MARK: - Navigation
@@ -38,4 +57,4 @@ class HomeVC: UIViewController {
     }
     */
 
-}
+

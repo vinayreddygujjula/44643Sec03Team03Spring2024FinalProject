@@ -61,6 +61,11 @@ class LoginVC: UIViewController {
             else{
                 return
             }
+        case "reset" :
+            guard let destinationVC = segue.destination as? ResetPasswordVC
+            else{
+                return
+            }
         default :
             break
         }
@@ -71,6 +76,7 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func resetPasswordAction(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "reset", sender: sender)
     }
     
     
