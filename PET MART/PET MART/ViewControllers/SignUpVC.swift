@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpVC: UIViewController {
 
@@ -52,6 +53,14 @@ class SignUpVC: UIViewController {
             return
         }
         self.ConfirmpasswordTF.layer.borderColor = UIColor.black.cgColor
+        
+//        Auth.auth().createUser(withEmail: email, password: password){ result, error in
+//            guard (result?.user) != nil
+//            else{
+//                return
+//            }
+//            self.performSegue(withIdentifier: "home", sender: sender)
+//        }
         
         self.performSegue(withIdentifier: "home", sender: sender)
     }
