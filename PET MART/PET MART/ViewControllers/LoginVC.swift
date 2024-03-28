@@ -7,6 +7,7 @@
 
 import UIKit
 import Lottie
+import Firebase
 
 class LoginVC: UIViewController {
     
@@ -46,23 +47,29 @@ class LoginVC: UIViewController {
         }
         self.passwordTF.layer.borderColor = UIColor.black.cgColor
         
+//        Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
+//            guard (result?.user) != nil else { return }
+//            self?.performSegue(withIdentifier: "home", sender: sender)
+//        }
+
         self.performSegue(withIdentifier: "home", sender: sender)
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch(segue.identifier){
         case "home" :
-            guard let destinationVC = segue.destination as? HomeVC
+            guard segue.destination is HomeVC
             else{
                 return
             }
         case "signup" :
-            guard let destinationVC = segue.destination as? SignUpVC
+            guard segue.destination is SignUpVC
             else{
                 return
             }
         case "reset" :
-            guard let destinationVC = segue.destination as? ResetPasswordVC
+            guard segue.destination is ResetPasswordVC
             else{
                 return
             }
