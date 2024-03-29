@@ -619,6 +619,8 @@
                         <outlet property="FirstNameTF" destination="aXc-Qn-r9b" id="w7b-87-vbK"/>
                         <outlet property="LastnameTF" destination="QWj-sO-swc" id="2j7-k0-B6V"/>
                         <outlet property="PasswordTF" destination="abb-iA-5kU" id="JIL-qQ-Vsv"/>
+                        <outlet property="SecurityQuestionLBL" destination="NmL-lG-YgJ" id="bjN-Jx-R1Q"/>
+                        <outlet property="SecurityQuestionTF" destination="eMX-wa-sPi" id="KUc-Rg-J8s"/>
                         <outlet property="SignUpBTN" destination="Puv-br-nWU" id="KJA-7f-32W"/>
                         <segue destination="j6S-Mc-VXS" kind="show" identifier="home" id="2LE-AO-UfK"/>
                     </connections>
