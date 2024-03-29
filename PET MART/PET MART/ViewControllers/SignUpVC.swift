@@ -54,6 +54,11 @@ class SignUpVC: UIViewController {
         }
         self.ConfirmpasswordTF.layer.borderColor = UIColor.black.cgColor
         
+        
+        
+        
+        
+        
 //        Auth.auth().createUser(withEmail: email, password: password){ result, error in
 //            guard (result?.user) != nil
 //            else{
