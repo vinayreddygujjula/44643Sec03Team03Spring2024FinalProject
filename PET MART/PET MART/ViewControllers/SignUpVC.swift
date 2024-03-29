@@ -16,6 +16,10 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var PasswordTF: UITextField!
     @IBOutlet weak var ConfirmpasswordTF: UITextField!
     @IBOutlet weak var SignUpBTN: UIButton!
+    @IBOutlet weak var SecurityQuestionLBL: UILabel!
+    @IBOutlet weak var SecurityQuestionTF: UITextField!
+    
+    
     
     @IBAction func signUpAction(_ sender: UIButton) {
         
@@ -54,6 +58,11 @@ class SignUpVC: UIViewController {
         }
         self.ConfirmpasswordTF.layer.borderColor = UIColor.black.cgColor
         
+        guard let securityQuestion = self.SecurityQuestionTF.text,!securityQuestion.isEmpty
+        else{
+            self.SecurityQuestionTF.layer.borderColor = UIColor.black.cgColor
+            return
+        }
         
         
         
@@ -90,6 +99,7 @@ class SignUpVC: UIViewController {
         Common.applyBorderProperties(to: EmailTF)
         Common.applyBorderProperties(to: PasswordTF)
         Common.applyBorderProperties(to: ConfirmpasswordTF)
+        Common.applyBorderProperties(to: SecurityQuestionTF)
     }
     
 
