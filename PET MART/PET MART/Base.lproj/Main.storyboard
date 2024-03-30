@@ -290,11 +290,28 @@
                     <connections>
                         <outlet property="PetBTN" destination="2K3-aX-nlo" id="D9e-4G-jWc"/>
                         <outlet property="ProductBTN" destination="9Bh-mt-wBW" id="pYa-nv-Ir8"/>
+                        <segue destination="AwJ-lF-FaA" kind="show" identifier="showProduct" id="jrc-vF-zyQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZbP-en-M2V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2305" y="-2"/>
+        </scene>
+        <!--Pets-->
+        <scene sceneID="rTy-Ah-hB4">
+            <objects>
+                <viewController id="AwJ-lF-FaA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gjn-T7-epD">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="lFx-xO-gZu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pets" id="t34-SI-1jH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cd9-6v-Xc5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3492" y="-2"/>
         </scene>
         <!--Reset PasswordVC-->
         <scene sceneID="sE2-9u-EiG">
@@ -656,7 +673,7 @@
         <image name="LoginScreenImg" width="1920" height="1920"/>
         <image name="aaaa" width="969" height="912"/>
         <image name="download-modified" width="222" height="222"/>
-        <image name="power.circle" catalog="system" width="128" height="123"/>
+        <image name="power.circle" catalog="system" width="32" height="32"/>
         <image name="product image-modified" width="180" height="180"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
