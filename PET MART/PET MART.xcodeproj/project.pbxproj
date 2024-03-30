@@ -26,6 +26,7 @@
 		A58ECF362B86C19300CD7858 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A58ECF352B86C19300CD7858 /* Assets.xcassets */; };
 		A58ECF392B86C19300CD7858 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A58ECF372B86C19300CD7858 /* LaunchScreen.storyboard */; };
 		A5D9C82C2B9AD249000D1A49 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D9C82B2B9AD249000D1A49 /* SignUpVC.swift */; };
+		FF3D25A02BB7AA2D0074BFBC /* PetControlDescriptionPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3D259F2BB7AA2D0074BFBC /* PetControlDescriptionPageVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		A58ECF382B86C19300CD7858 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A58ECF3A2B86C19300CD7858 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5D9C82B2B9AD249000D1A49 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		FF3D259F2BB7AA2D0074BFBC /* PetControlDescriptionPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetControlDescriptionPageVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				A12990912B9A9857004955FF /* SupportingFiles */,
 				A12990922B9A986A004955FF /* ViewControllers */,
 				A58ECF322B86C19200CD7858 /* Main.storyboard */,
+				FF3D259F2BB7AA2D0074BFBC /* PetControlDescriptionPageVC.swift */,
 				A1660B982B9C401D00C722FE /* CommonClass.swift */,
 				A58ECF352B86C19300CD7858 /* Assets.xcassets */,
 				A58ECF372B86C19300CD7858 /* LaunchScreen.storyboard */,
@@ -200,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF3D25A02BB7AA2D0074BFBC /* PetControlDescriptionPageVC.swift in Sources */,
 				A58ECF312B86C19200CD7858 /* LoginVC.swift in Sources */,
 				A12990962B9A98DC004955FF /* HomeVC.swift in Sources */,
 				A58ECF2D2B86C19200CD7858 /* AppDelegate.swift in Sources */,
