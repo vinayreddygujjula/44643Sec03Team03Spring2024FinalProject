@@ -35,4 +35,5 @@ Application aims to offer consumers a convenient platform for browsing and selec
 - User will able to check the bill and checkout. 
 
 #### Status
-- 03/08/2024 - Developed UI and navigation for login, signup and home screens 
+- 03/29/2024 - Developed UI and navigation for Pets screen
+- 03/29/2024 - added login and sign up validations
