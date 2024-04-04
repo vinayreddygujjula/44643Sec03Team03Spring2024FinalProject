@@ -52,7 +52,7 @@ class LoginVC: UIViewController {
 //            self?.performSegue(withIdentifier: "home", sender: sender)
 //        }
 
-        self.performSegue(withIdentifier: "home", sender: sender)
+        self.performSegue(withIdentifier: "loginToHome", sender: sender)
     }
     
     
@@ -89,6 +89,7 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.setHidesBackButton(true, animated: true)
         // Do any additional setup after loading the view.
         Common.applyBorderProperties(to: emailTF)
         Common.applyBorderProperties(to: passwordTF)
