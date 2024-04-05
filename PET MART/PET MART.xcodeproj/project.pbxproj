@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5366578C2BC08A110016EB4E /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366578B2BC08A110016EB4E /* CartVC.swift */; };
+		5366578E2BC08A230016EB4E /* ProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366578D2BC08A230016EB4E /* ProductsVC.swift */; };
+		536657902BC08A340016EB4E /* PetsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366578F2BC08A340016EB4E /* PetsVC.swift */; };
 		5369986F2B9D471E001F7EA8 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5369986E2B9D471E001F7EA8 /* ResetPasswordVC.swift */; };
 		A12990962B9A98DC004955FF /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12990932B9A98DC004955FF /* HomeVC.swift */; };
 		A1660B992B9C401D00C722FE /* CommonClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1660B982B9C401D00C722FE /* CommonClass.swift */; };
@@ -29,6 +32,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5366578B2BC08A110016EB4E /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
+		5366578D2BC08A230016EB4E /* ProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsVC.swift; sourceTree = "<group>"; };
+		5366578F2BC08A340016EB4E /* PetsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsVC.swift; sourceTree = "<group>"; };
 		5369986E2B9D471E001F7EA8 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
 		A12990932B9A98DC004955FF /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		A1660B982B9C401D00C722FE /* CommonClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonClass.swift; sourceTree = "<group>"; };
@@ -79,6 +85,9 @@
 				5369986E2B9D471E001F7EA8 /* ResetPasswordVC.swift */,
 				A12990932B9A98DC004955FF /* HomeVC.swift */,
 				A5D9C82B2B9AD249000D1A49 /* SignUpVC.swift */,
+				5366578B2BC08A110016EB4E /* CartVC.swift */,
+				5366578D2BC08A230016EB4E /* ProductsVC.swift */,
+				5366578F2BC08A340016EB4E /* PetsVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -202,11 +211,14 @@
 			files = (
 				A58ECF312B86C19200CD7858 /* LoginVC.swift in Sources */,
 				A12990962B9A98DC004955FF /* HomeVC.swift in Sources */,
+				5366578C2BC08A110016EB4E /* CartVC.swift in Sources */,
 				A58ECF2D2B86C19200CD7858 /* AppDelegate.swift in Sources */,
 				A5D9C82C2B9AD249000D1A49 /* SignUpVC.swift in Sources */,
 				5369986F2B9D471E001F7EA8 /* ResetPasswordVC.swift in Sources */,
+				536657902BC08A340016EB4E /* PetsVC.swift in Sources */,
 				A58ECF2F2B86C19200CD7858 /* SceneDelegate.swift in Sources */,
 				A1660B992B9C401D00C722FE /* CommonClass.swift in Sources */,
+				5366578E2BC08A230016EB4E /* ProductsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
