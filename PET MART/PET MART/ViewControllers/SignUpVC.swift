@@ -79,17 +79,17 @@ class SignUpVC: UIViewController {
         self.performSegue(withIdentifier: "home", sender: sender)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch(segue.identifier){
-        case "home" :
-            guard let destinationVC = segue.destination as? HomeVC
-            else{
-                return
-            }
-        default :
-            break
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        switch(segue.identifier){
+//        case "home" :
+//            guard let destinationVC = segue.destination as? HomeVC
+//            else{
+//                return
+//            }
+//        default :
+//            break
+//        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

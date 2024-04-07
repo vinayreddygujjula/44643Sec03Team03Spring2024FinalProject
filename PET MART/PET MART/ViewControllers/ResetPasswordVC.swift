@@ -51,17 +51,17 @@ class ResetPasswordVC: UIViewController {
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch(segue.identifier){
-        case "login" :
-            guard let destinationVC = segue.destination as? LoginVC
-            else{
-                return
-            }
-        default :
-            break
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        switch(segue.identifier){
+//        case "login" :
+//            guard let destinationVC = segue.destination as? LoginVC
+//            else{
+//                return
+//            }
+//        default :
+//            break
+//        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

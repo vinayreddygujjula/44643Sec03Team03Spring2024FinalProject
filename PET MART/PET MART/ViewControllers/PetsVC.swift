@@ -6,15 +6,57 @@
 //
 
 import UIKit
+import SDWebImage
 
-class PetsVC: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+class PetsVC: UIViewController, UIScrollViewDelegate {
+    
+    @IBOutlet weak var petScrollView: UIScrollView!
+    @IBOutlet weak var petStackView: UIStackView!
+    var data : [Animal] = []
+    
+    private func showMenu() {
+        data.forEach { item in
+            let view = PetViewVC()
+            view.pet = item
+            if ((item.photos?.first?.small?.isEmpty) == nil), let thumbnailImage = item.photos?.first?.small{
+                view.PetIV.sd_setImage(with: URL(string: thumbnailImage))
+            }
+            view.NameLBL.text = item.name
+            view.TypeBreedLBL.text = String(format: "\(item.type)")
+            view.heightAnchor.constraint(equalToConstant: 300.0).isActive = true
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+            tapGesture.numberOfTapsRequired = 1
+            view.addGestureRecognizer(tapGesture)
+            self.petStackView.addArrangedSubview(view)
+        }
     }
     
-
-
-
+    @objc private func handleTap(_ recognizer: UITapGestureRecognizer){
+        switch (recognizer.state){
+        case .ended:
+            guard let itemView = recognizer.view as? PetViewVC else {return}
+            self.performSegue(withIdentifier: "petsToPetDetail", sender: itemView)
+        default:
+            assert (false, "Invalid segue!")
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "petsToPetDetail",
+           let destinationVC = segue.destination as? PetDetailsVC,
+           let pet = sender as? PetViewVC {
+            destinationVC.data = pet.pet
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.petScrollView.delegate = self
+        
+        Task {
+            data = try await APIService.shared.fetchAnimalsData()
+            showMenu()
+        }
+    }
+    
 }
