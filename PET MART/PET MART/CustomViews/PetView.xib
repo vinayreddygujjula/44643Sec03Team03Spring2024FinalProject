@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PetViewVC" customModule="PET_MART" customModuleProvider="target">
             <connections>
+                <outlet property="GenderLBL" destination="KDc-qU-1Th" id="oHr-8n-HWt"/>
                 <outlet property="NameLBL" destination="ojR-Qk-Tz1" id="Htp-48-67l"/>
                 <outlet property="PetIV" destination="EDu-6a-nVk" id="Ch7-Vy-XZK"/>
                 <outlet property="TypeBreedLBL" destination="b8n-Kb-TJt" id="4zF-ei-EAf"/>
@@ -24,30 +25,41 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pkv-bx-lhW" userLabel="BigContainerSV">
                     <rect key="frame" x="10" y="69" width="373" height="739"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pawprint.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EDu-6a-nVk">
-                            <rect key="frame" x="0.0" y="1" width="373" height="508"/>
-                        </imageView>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="e5i-Vi-CS1" userLabel="PetDetailsSV">
-                            <rect key="frame" x="0.0" y="517.33333333333337" width="373" height="221.66666666666663"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="D7I-9Y-VML">
+                            <rect key="frame" x="0.0" y="0.0" width="373" height="739"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojR-Qk-Tz1" userLabel="Name">
-                                    <rect key="frame" x="0.0" y="0.0" width="373" height="106.66666666666667"/>
-                                    <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="40"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type and Breed" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8n-Kb-TJt">
-                                    <rect key="frame" x="0.0" y="114.66666666666663" width="373" height="107"/>
-                                    <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="20"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pawprint.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EDu-6a-nVk">
+                                    <rect key="frame" x="0.0" y="1" width="149.33333333333334" height="737.66666666666663"/>
+                                </imageView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="e5i-Vi-CS1" userLabel="PetDetailsSV">
+                                    <rect key="frame" x="157.33333333333337" y="0.0" width="215.66666666666663" height="739"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojR-Qk-Tz1" userLabel="Name">
+                                            <rect key="frame" x="0.0" y="0.0" width="215.66666666666666" height="241"/>
+                                            <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="30"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type and Breed" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8n-Kb-TJt">
+                                            <rect key="frame" x="0.0" y="249" width="215.66666666666666" height="241"/>
+                                            <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDc-qU-1Th">
+                                            <rect key="frame" x="0.0" y="498" width="215.66666666666666" height="241"/>
+                                            <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
                             </subviews>
+                            <constraints>
+                                <constraint firstItem="EDu-6a-nVk" firstAttribute="width" secondItem="D7I-9Y-VML" secondAttribute="width" multiplier="0.4" id="9Tz-M9-XZm"/>
+                            </constraints>
                         </stackView>
                     </subviews>
-                    <constraints>
-                        <constraint firstItem="e5i-Vi-CS1" firstAttribute="height" secondItem="pkv-bx-lhW" secondAttribute="height" multiplier="0.3" id="4ZB-x8-wwa"/>
-                    </constraints>
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="HYY-ps-2yx"/>

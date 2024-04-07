@@ -23,7 +23,8 @@ class PetsVC: UIViewController, UIScrollViewDelegate {
             }
             view.NameLBL.text = item.name
             view.TypeBreedLBL.text = String(format: "\(item.type)")
-            view.heightAnchor.constraint(equalToConstant: 300.0).isActive = true
+            view.GenderLBL.text = item.gender
+            view.heightAnchor.constraint(equalToConstant: 120.0).isActive = true
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
             tapGesture.numberOfTapsRequired = 1
             view.addGestureRecognizer(tapGesture)

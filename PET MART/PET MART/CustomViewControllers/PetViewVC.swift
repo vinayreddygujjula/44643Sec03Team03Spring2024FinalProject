@@ -11,7 +11,8 @@ class PetViewVC: UIView {
 
     @IBOutlet weak var PetIV: UIImageView!
     @IBOutlet weak var NameLBL: UILabel!
-    @IBOutlet weak var TypeBreedLBL: UILabel! 
+    @IBOutlet weak var TypeBreedLBL: UILabel!
+    @IBOutlet weak var GenderLBL: UILabel!
     
     var pet = Animal.init(id: 0, type: "", breeds: Breeds(primary: "", secondary: "", mixed: false, unknown: false), gender: "", name: "", description: "", photos: [Photos.init(small: "", medium: "", large: "", full: "")], contact: Contact(email: "", phone: "", address: Address(address1: "", address2: "", city: "", state: "", postcode: "", country: "")))
         
