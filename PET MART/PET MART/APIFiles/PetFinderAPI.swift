@@ -20,12 +20,6 @@ class APIConstants {
     ]
 }
 
-enum NetworkError: Error {
-    case invalidURL
-    case invalidResponse
-    case generalError
-}
-
 class APIService {
     
     static let shared = APIService()
@@ -61,7 +55,7 @@ class APIService {
     
     func fetchAnimalsData() async throws -> [Animal] {
         let token = try await APIService.shared.getAccessToken()
-        guard let url = URL(string: "https://api.petfinder.com/v2/animals?page=1") else {
+        guard let url = URL(string: "https://api.petfinder.com/v2/animals?limit=100") else {
             throw NetworkError.invalidURL
         }
         var urlRequest = URLRequest(url: url)

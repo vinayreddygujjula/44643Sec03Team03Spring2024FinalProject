@@ -1,21 +1,22 @@
 //
-//  PetViewVC.swift
+//  ProductVC.swift
 //  PET MART
 //
-//  Created by Vinay Reddy Gujjula on 4/6/24.
+//  Created by Vinay Reddy Gujjula on 4/7/24.
 //
 
 import UIKit
 
-class PetViewVC: UIView {
+class ProductVC: UIView {
 
-    @IBOutlet weak var PetIV: UIImageView!
-    @IBOutlet weak var NameLBL: UILabel!
-    @IBOutlet weak var TypeBreedLBL: UILabel!
-    @IBOutlet weak var GenderLBL: UILabel!
+    @IBOutlet weak var ProductIV: UIImageView!
+    @IBOutlet weak var nameLBL: UILabel!
+    @IBOutlet weak var descriptionLBL: UILabel!
+    @IBOutlet weak var ratingLBL: UILabel!
+    @IBOutlet weak var priceLBL: UILabel!
     
-    var pet = Animal.init(id: 0, type: "", breeds: Breeds(primary: "", secondary: "", mixed: false, unknown: false), gender: "", name: "", description: "", photos: [Photos.init(small: "", medium: "", large: "", full: "")], contact: Contact(email: "", phone: "", address: Address(address1: "", address2: "", city: "", state: "", postcode: "", country: "")))
-        
+    var product = Product(id: 0, name: "", price: "", image1: "", image2: "", image3: "", rating: "", thumbnail: "", description: "")
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadView()
@@ -27,12 +28,13 @@ class PetViewVC: UIView {
     }
     
     func loadView() {
-        let nib = UINib(nibName: "PetView", bundle: nil)
+        let nib = UINib(nibName: "ProductView", bundle: nil)
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         view.frame = bounds
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(view)
     }
+    
     
     /*
     // Only override draw() if you perform custom drawing.
