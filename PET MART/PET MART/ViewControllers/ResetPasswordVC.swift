@@ -25,12 +25,7 @@ class ResetPasswordVC: UIViewController {
         }
         self.EmailTF.layer.borderColor = UIColor.black.cgColor
         
-        guard let securityQuestion = self.SecurityQuestionTF.text, !securityQuestion.isEmpty
-        else{
-            self.SecurityQuestionTF.layer.borderColor = UIColor.red.cgColor
-            return
-        }
-        self.SecurityQuestionTF.layer.borderColor = UIColor.black.cgColor
+       
         
         
         guard let password = self.ResetPasswordTF.text, !password.isEmpty
@@ -47,21 +42,9 @@ class ResetPasswordVC: UIViewController {
         }
         self.ConfirmPasswordTF.layer.borderColor = UIColor.black.cgColor
         
-        self.performSegue(withIdentifier: "login", sender: sender)
+        self.performSegue(withIdentifier: "resetToLogin", sender: sender)
     }
     
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        switch(segue.identifier){
-//        case "login" :
-//            guard let destinationVC = segue.destination as? LoginVC
-//            else{
-//                return
-//            }
-//        default :
-//            break
-//        }
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +52,7 @@ class ResetPasswordVC: UIViewController {
         Common.applyBorderProperties(to: EmailTF)
         Common.applyBorderProperties(to: ResetPasswordTF)
         Common.applyBorderProperties(to: ConfirmPasswordTF)
-        Common.applyBorderProperties(to: SecurityQuestionTF)
+        
         // Do any additional setup after loading the view.
     }
     

@@ -16,11 +16,7 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var PasswordTF: UITextField!
     @IBOutlet weak var ConfirmpasswordTF: UITextField!
     @IBOutlet weak var SignUpBTN: UIButton!
-    @IBOutlet weak var SecurityQuestionLBL: UILabel!
-    @IBOutlet weak var SecurityQuestionTF: UITextField!
-    
-    
-    
+
     @IBAction func signUpAction(_ sender: UIButton) {
         
         guard let firstName = self.FirstNameTF.text, !firstName.isEmpty
@@ -57,39 +53,18 @@ class SignUpVC: UIViewController {
             return
         }
         self.ConfirmpasswordTF.layer.borderColor = UIColor.black.cgColor
-        
-        guard let securityQuestion = self.SecurityQuestionTF.text,!securityQuestion.isEmpty
-        else{
-            self.SecurityQuestionTF.layer.borderColor = UIColor.black.cgColor
-            return
+
+        Task{
+            do {
+                try await AuthenticationManager.shared.createUser(email: email, password: password, username: firstName)
+            }
+            catch {
+                print(error.localizedDescription)
+            }
         }
-        
-        
-        
-        
-        
-//        Auth.auth().createUser(withEmail: email, password: password){ result, error in
-//            guard (result?.user) != nil
-//            else{
-//                return
-//            }
-//            self.performSegue(withIdentifier: "home", sender: sender)
-//        }
         
         self.performSegue(withIdentifier: "home", sender: sender)
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        switch(segue.identifier){
-//        case "home" :
-//            guard let destinationVC = segue.destination as? HomeVC
-//            else{
-//                return
-//            }
-//        default :
-//            break
-//        }
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,7 +74,7 @@ class SignUpVC: UIViewController {
         Common.applyBorderProperties(to: EmailTF)
         Common.applyBorderProperties(to: PasswordTF)
         Common.applyBorderProperties(to: ConfirmpasswordTF)
-        Common.applyBorderProperties(to: SecurityQuestionTF)
+        
     }
     
 

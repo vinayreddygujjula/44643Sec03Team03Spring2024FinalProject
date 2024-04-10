@@ -6,32 +6,35 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeVC: UIViewController {
     
-    @IBOutlet weak var ImageIV: UIImageView!
-    
-    @IBOutlet weak var ImageScrollView: UIScrollView!
-    var timer: Timer?
-    @IBOutlet weak var SearchTF: UITextField!
-    
-    
     @IBOutlet weak var PetBTN: UIButton!
-    
     @IBOutlet weak var ProductBTN: UIButton!
     
+    @IBOutlet weak var userNameLBL: UILabel!
+    
+    
+    
+    @IBAction func logout(_ sender: UIBarButtonItem) {
+        Task{
+            do{
+                try AuthenticationManager.shared.signOut()
+            }
+            catch{
+                print(error.localizedDescription)
+            }
+        }
+        self.performSegue(withIdentifier: "homeToLogin", sender: sender)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.userNameLBL.text = Auth.auth().currentUser?.displayName
         // Do any additional setup after loading the view.
         self.navigationItem.setHidesBackButton(true, animated: true)
-        
-        
     }
-      
-    
-    
 }
     
 

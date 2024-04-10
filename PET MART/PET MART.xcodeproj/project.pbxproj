@@ -11,6 +11,7 @@
 		5366578E2BC08A230016EB4E /* ProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366578D2BC08A230016EB4E /* ProductsVC.swift */; };
 		536657902BC08A340016EB4E /* PetsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366578F2BC08A340016EB4E /* PetsVC.swift */; };
 		5369986F2B9D471E001F7EA8 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5369986E2B9D471E001F7EA8 /* ResetPasswordVC.swift */; };
+		53E5ED482BC66C04003B716F /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E5ED472BC66C04003B716F /* AuthenticationModel.swift */; };
 		A12990962B9A98DC004955FF /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12990932B9A98DC004955FF /* HomeVC.swift */; };
 		A12A1BF62BC275F400D2E132 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12A1BF52BC275F400D2E132 /* Pet.swift */; };
 		A12A1BFC2BC28BEC00D2E132 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A12A1BFB2BC28BEC00D2E132 /* GoogleService-Info.plist */; };
@@ -57,6 +58,7 @@
 		5366578D2BC08A230016EB4E /* ProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsVC.swift; sourceTree = "<group>"; };
 		5366578F2BC08A340016EB4E /* PetsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsVC.swift; sourceTree = "<group>"; };
 		5369986E2B9D471E001F7EA8 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
+		53E5ED472BC66C04003B716F /* AuthenticationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthenticationModel.swift; path = "PET MART/Models/AuthenticationModel.swift"; sourceTree = SOURCE_ROOT; };
 		A12990932B9A98DC004955FF /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		A12A1BF52BC275F400D2E132 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		A12A1BFB2BC28BEC00D2E132 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			children = (
 				A12A1BF52BC275F400D2E132 /* Pet.swift */,
 				A1F2EAE12BC31368008279CD /* Product.swift */,
+				53E5ED472BC66C04003B716F /* AuthenticationModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A58ECF312B86C19200CD7858 /* LoginVC.swift in Sources */,
+				53E5ED482BC66C04003B716F /* AuthenticationModel.swift in Sources */,
 				A12990962B9A98DC004955FF /* HomeVC.swift in Sources */,
 				A19E36D92BC2521B00BC01B1 /* PetDetailsVC.swift in Sources */,
 				A1F2EAE02BC31295008279CD /* ProductVC.swift in Sources */,
@@ -497,7 +501,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.nwmissouri.spring24.cs44643.sec03.PET-MART";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.nwmissouri.spring24.cs44643.sec03;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -524,7 +528,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.nwmissouri.spring24.cs44643.sec03.PET-MART";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.nwmissouri.spring24.cs44643.sec03;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -47,35 +47,15 @@ class LoginVC: UIViewController {
         }
         self.passwordTF.layer.borderColor = UIColor.black.cgColor
         
-//        Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
-//            guard (result?.user) != nil else { return }
-//            self?.performSegue(withIdentifier: "home", sender: sender)
-//        }
-
-        self.performSegue(withIdentifier: "loginToHome", sender: sender)
-    }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch(segue.identifier){
-        case "home" :
-            guard segue.destination is HomeVC
-            else{
-                return
+        Task{
+            do{
+                try await AuthenticationManager.shared.signIn(email: email, password: password)
             }
-        case "signup" :
-            guard segue.destination is SignUpVC
-            else{
-                return
+            catch{
+                print(error.localizedDescription)
             }
-        case "reset" :
-            guard segue.destination is ResetPasswordVC
-            else{
-                return
-            }
-        default :
-            break
         }
+        self.performSegue(withIdentifier: "loginToHome", sender: sender)
     }
     
     @IBAction func signUpAction(_ sender: UIButton) {
