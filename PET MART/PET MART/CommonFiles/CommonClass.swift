@@ -23,3 +23,9 @@ class Common{
         element.layer.borderColor = UIColor.black.cgColor
     }
 }
+
+enum NetworkError: Error {
+    case invalidURL
+    case invalidResponse
+    case generalError
+}

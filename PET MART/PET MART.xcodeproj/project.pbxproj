@@ -12,10 +12,10 @@
 		536657902BC08A340016EB4E /* PetsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366578F2BC08A340016EB4E /* PetsVC.swift */; };
 		5369986F2B9D471E001F7EA8 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5369986E2B9D471E001F7EA8 /* ResetPasswordVC.swift */; };
 		A12990962B9A98DC004955FF /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12990932B9A98DC004955FF /* HomeVC.swift */; };
-		A12A1BF62BC275F400D2E132 /* PetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12A1BF52BC275F400D2E132 /* PetModel.swift */; };
+		A12A1BF62BC275F400D2E132 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12A1BF52BC275F400D2E132 /* Pet.swift */; };
 		A12A1BFC2BC28BEC00D2E132 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A12A1BFB2BC28BEC00D2E132 /* GoogleService-Info.plist */; };
 		A139727B2BC1207200B25399 /* PetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A139727A2BC1207200B25399 /* PetView.xib */; };
-		A139727D2BC122FB00B25399 /* PetViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A139727C2BC122FB00B25399 /* PetViewVC.swift */; };
+		A139727D2BC122FB00B25399 /* PetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A139727C2BC122FB00B25399 /* PetVC.swift */; };
 		A139727F2BC1299F00B25399 /* PetFinderAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A139727E2BC1299F00B25399 /* PetFinderAPI.swift */; };
 		A13972822BC1BDB700B25399 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = A13972812BC1BDB700B25399 /* Lottie */; };
 		A13972852BC1BE0B00B25399 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A13972842BC1BE0B00B25399 /* FirebaseAnalytics */; };
@@ -36,6 +36,13 @@
 		A19E36D92BC2521B00BC01B1 /* PetDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19E36D82BC2521B00BC01B1 /* PetDetailsVC.swift */; };
 		A19E36DC2BC2670000BC01B1 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = A19E36DB2BC2670000BC01B1 /* SDWebImage */; };
 		A19E36DE2BC2670000BC01B1 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A19E36DD2BC2670000BC01B1 /* SDWebImageMapKit */; };
+		A1A4BB082BC47E7900CC66EB /* ProductDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A4BB072BC47E7900CC66EB /* ProductDetailsVC.swift */; };
+		A1D31F722BC3165500F613EB /* ProductsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D31F712BC3165500F613EB /* ProductsAPI.swift */; };
+		A1D31F752BC3190C00F613EB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A1D31F742BC3190C00F613EB /* Alamofire */; };
+		A1D31F772BC3190C00F613EB /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = A1D31F762BC3190C00F613EB /* AlamofireDynamic */; };
+		A1F2EADE2BC3115D008279CD /* ProductView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F2EADD2BC3115D008279CD /* ProductView.xib */; };
+		A1F2EAE02BC31295008279CD /* ProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F2EADF2BC31295008279CD /* ProductVC.swift */; };
+		A1F2EAE22BC31368008279CD /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F2EAE12BC31368008279CD /* Product.swift */; };
 		A58ECF2D2B86C19200CD7858 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58ECF2C2B86C19200CD7858 /* AppDelegate.swift */; };
 		A58ECF2F2B86C19200CD7858 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58ECF2E2B86C19200CD7858 /* SceneDelegate.swift */; };
 		A58ECF312B86C19200CD7858 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58ECF302B86C19200CD7858 /* LoginVC.swift */; };
@@ -51,13 +58,18 @@
 		5366578F2BC08A340016EB4E /* PetsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsVC.swift; sourceTree = "<group>"; };
 		5369986E2B9D471E001F7EA8 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
 		A12990932B9A98DC004955FF /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
-		A12A1BF52BC275F400D2E132 /* PetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetModel.swift; sourceTree = "<group>"; };
+		A12A1BF52BC275F400D2E132 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		A12A1BFB2BC28BEC00D2E132 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A139727A2BC1207200B25399 /* PetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetView.xib; sourceTree = "<group>"; };
-		A139727C2BC122FB00B25399 /* PetViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetViewVC.swift; sourceTree = "<group>"; };
+		A139727C2BC122FB00B25399 /* PetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetVC.swift; sourceTree = "<group>"; };
 		A139727E2BC1299F00B25399 /* PetFinderAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetFinderAPI.swift; sourceTree = "<group>"; };
 		A1660B982B9C401D00C722FE /* CommonClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonClass.swift; sourceTree = "<group>"; };
 		A19E36D82BC2521B00BC01B1 /* PetDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsVC.swift; sourceTree = "<group>"; };
+		A1A4BB072BC47E7900CC66EB /* ProductDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsVC.swift; sourceTree = "<group>"; };
+		A1D31F712BC3165500F613EB /* ProductsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsAPI.swift; sourceTree = "<group>"; };
+		A1F2EADD2BC3115D008279CD /* ProductView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductView.xib; sourceTree = "<group>"; };
+		A1F2EADF2BC31295008279CD /* ProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVC.swift; sourceTree = "<group>"; };
+		A1F2EAE12BC31368008279CD /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		A58ECF292B86C19200CD7858 /* PET MART.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PET MART.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A58ECF2C2B86C19200CD7858 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A58ECF2E2B86C19200CD7858 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,12 +95,14 @@
 				A13972852BC1BE0B00B25399 /* FirebaseAnalytics in Frameworks */,
 				A13972952BC1BE0B00B25399 /* FirebaseFirestoreSwift in Frameworks */,
 				A139729F2BC1BE0B00B25399 /* FirebaseStorageCombine-Community in Frameworks */,
+				A1D31F752BC3190C00F613EB /* Alamofire in Frameworks */,
 				A19E36DE2BC2670000BC01B1 /* SDWebImageMapKit in Frameworks */,
 				A13972822BC1BDB700B25399 /* Lottie in Frameworks */,
 				A13972912BC1BE0B00B25399 /* FirebaseFirestore in Frameworks */,
 				A13972892BC1BE0B00B25399 /* FirebaseAuth in Frameworks */,
 				A13972972BC1BE0B00B25399 /* FirebaseFunctions in Frameworks */,
 				A139729D2BC1BE0B00B25399 /* FirebaseStorage in Frameworks */,
+				A1D31F772BC3190C00F613EB /* AlamofireDynamic in Frameworks */,
 				A139728B2BC1BE0B00B25399 /* FirebaseAuthCombine-Community in Frameworks */,
 				A13972992BC1BE0B00B25399 /* FirebaseFunctionsCombine-Community in Frameworks */,
 			);
@@ -117,6 +131,7 @@
 				5366578D2BC08A230016EB4E /* ProductsVC.swift */,
 				5366578F2BC08A340016EB4E /* PetsVC.swift */,
 				A19E36D82BC2521B00BC01B1 /* PetDetailsVC.swift */,
+				A1A4BB072BC47E7900CC66EB /* ProductDetailsVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -124,7 +139,8 @@
 		A12A1BF72BC28B4D00D2E132 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A12A1BF52BC275F400D2E132 /* PetModel.swift */,
+				A12A1BF52BC275F400D2E132 /* Pet.swift */,
+				A1F2EAE12BC31368008279CD /* Product.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -132,6 +148,7 @@
 		A12A1BF82BC28B5B00D2E132 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				A1F2EADD2BC3115D008279CD /* ProductView.xib */,
 				A139727A2BC1207200B25399 /* PetView.xib */,
 			);
 			path = CustomViews;
@@ -140,7 +157,8 @@
 		A12A1BF92BC28B6600D2E132 /* CustomViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A139727C2BC122FB00B25399 /* PetViewVC.swift */,
+				A139727C2BC122FB00B25399 /* PetVC.swift */,
+				A1F2EADF2BC31295008279CD /* ProductVC.swift */,
 			);
 			path = CustomViewControllers;
 			sourceTree = "<group>";
@@ -149,9 +167,17 @@
 			isa = PBXGroup;
 			children = (
 				A1660B982B9C401D00C722FE /* CommonClass.swift */,
-				A139727E2BC1299F00B25399 /* PetFinderAPI.swift */,
 			);
 			path = CommonFiles;
+			sourceTree = "<group>";
+		};
+		A1F1A8F92BC654A4007211DF /* APIFiles */ = {
+			isa = PBXGroup;
+			children = (
+				A1D31F712BC3165500F613EB /* ProductsAPI.swift */,
+				A139727E2BC1299F00B25399 /* PetFinderAPI.swift */,
+			);
+			path = APIFiles;
 			sourceTree = "<group>";
 		};
 		A58ECF202B86C19200CD7858 = {
@@ -179,6 +205,7 @@
 				A12A1BF82BC28B5B00D2E132 /* CustomViews */,
 				A12A1BF92BC28B6600D2E132 /* CustomViewControllers */,
 				A12A1BFA2BC28BA200D2E132 /* CommonFiles */,
+				A1F1A8F92BC654A4007211DF /* APIFiles */,
 				A58ECF322B86C19200CD7858 /* Main.storyboard */,
 				A58ECF352B86C19300CD7858 /* Assets.xcassets */,
 				A58ECF372B86C19300CD7858 /* LaunchScreen.storyboard */,
@@ -222,6 +249,8 @@
 				A139729E2BC1BE0B00B25399 /* FirebaseStorageCombine-Community */,
 				A19E36DB2BC2670000BC01B1 /* SDWebImage */,
 				A19E36DD2BC2670000BC01B1 /* SDWebImageMapKit */,
+				A1D31F742BC3190C00F613EB /* Alamofire */,
+				A1D31F762BC3190C00F613EB /* AlamofireDynamic */,
 			);
 			productName = "PET MART";
 			productReference = A58ECF292B86C19200CD7858 /* PET MART.app */;
@@ -255,6 +284,7 @@
 				A13972802BC1BDB700B25399 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				A13972832BC1BE0B00B25399 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				A19E36DA2BC2670000BC01B1 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				A1D31F732BC3190C00F613EB /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = A58ECF2A2B86C19200CD7858 /* Products */;
 			projectDirPath = "";
@@ -274,6 +304,7 @@
 				A58ECF392B86C19300CD7858 /* LaunchScreen.storyboard in Resources */,
 				A12A1BFC2BC28BEC00D2E132 /* GoogleService-Info.plist in Resources */,
 				A58ECF362B86C19300CD7858 /* Assets.xcassets in Resources */,
+				A1F2EADE2BC3115D008279CD /* ProductView.xib in Resources */,
 				A58ECF342B86C19200CD7858 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,16 +319,20 @@
 				A58ECF312B86C19200CD7858 /* LoginVC.swift in Sources */,
 				A12990962B9A98DC004955FF /* HomeVC.swift in Sources */,
 				A19E36D92BC2521B00BC01B1 /* PetDetailsVC.swift in Sources */,
+				A1F2EAE02BC31295008279CD /* ProductVC.swift in Sources */,
+				A1D31F722BC3165500F613EB /* ProductsAPI.swift in Sources */,
 				5366578C2BC08A110016EB4E /* CartVC.swift in Sources */,
 				A58ECF2D2B86C19200CD7858 /* AppDelegate.swift in Sources */,
 				A5D9C82C2B9AD249000D1A49 /* SignUpVC.swift in Sources */,
 				5369986F2B9D471E001F7EA8 /* ResetPasswordVC.swift in Sources */,
 				536657902BC08A340016EB4E /* PetsVC.swift in Sources */,
+				A1F2EAE22BC31368008279CD /* Product.swift in Sources */,
+				A1A4BB082BC47E7900CC66EB /* ProductDetailsVC.swift in Sources */,
 				A58ECF2F2B86C19200CD7858 /* SceneDelegate.swift in Sources */,
 				A139727F2BC1299F00B25399 /* PetFinderAPI.swift in Sources */,
 				A1660B992B9C401D00C722FE /* CommonClass.swift in Sources */,
-				A12A1BF62BC275F400D2E132 /* PetModel.swift in Sources */,
-				A139727D2BC122FB00B25399 /* PetViewVC.swift in Sources */,
+				A12A1BF62BC275F400D2E132 /* Pet.swift in Sources */,
+				A139727D2BC122FB00B25399 /* PetVC.swift in Sources */,
 				5366578E2BC08A230016EB4E /* ProductsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -545,6 +580,14 @@
 				minimumVersion = 5.19.1;
 			};
 		};
+		A1D31F732BC3190C00F613EB /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -632,6 +675,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A19E36DA2BC2670000BC01B1 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImageMapKit;
+		};
+		A1D31F742BC3190C00F613EB /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1D31F732BC3190C00F613EB /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		A1D31F762BC3190C00F613EB /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1D31F732BC3190C00F613EB /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

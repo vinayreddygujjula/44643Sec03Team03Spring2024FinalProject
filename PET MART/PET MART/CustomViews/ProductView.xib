@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductVC" customModule="PET_MART" customModuleProvider="target">
+            <connections>
+                <outlet property="ProductIV" destination="V8x-Cl-Zm0" id="UDk-ev-7Tg"/>
+                <outlet property="descriptionLBL" destination="HAh-oV-3Gx" id="X1F-86-shq"/>
+                <outlet property="nameLBL" destination="xhF-e3-PLG" id="ljj-tL-uhj"/>
+                <outlet property="priceLBL" destination="U5l-n2-Dbx" id="Yo9-Jc-6fF"/>
+                <outlet property="ratingLBL" destination="TzA-18-X5D" id="2FO-d5-6iz"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5RH-ZK-SdU" userLabel="BigContainerSV">
+                    <rect key="frame" x="5" y="64" width="383" height="749"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BnN-aj-wLF">
+                            <rect key="frame" x="0.0" y="0.0" width="383" height="749"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pawprint.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="V8x-Cl-Zm0">
+                                    <rect key="frame" x="0.0" y="1" width="153.33333333333334" height="747.66666666666663"/>
+                                </imageView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qZk-zR-Cdf" userLabel="ProductDetailsSV">
+                                    <rect key="frame" x="161.33333333333337" y="0.0" width="221.66666666666663" height="749"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhF-e3-PLG">
+                                            <rect key="frame" x="0.0" y="0.0" width="221.66666666666666" height="149.66666666666666"/>
+                                            <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAh-oV-3Gx">
+                                            <rect key="frame" x="0.0" y="149.66666666666666" width="221.66666666666666" height="299.66666666666674"/>
+                                            <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="10"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⭐️" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TzA-18-X5D">
+                                            <rect key="frame" x="0.0" y="449.33333333333337" width="221.66666666666666" height="150"/>
+                                            <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5l-n2-Dbx">
+                                            <rect key="frame" x="0.0" y="599.33333333333337" width="221.66666666666666" height="149.66666666666663"/>
+                                            <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="U5l-n2-Dbx" firstAttribute="height" secondItem="qZk-zR-Cdf" secondAttribute="height" multiplier="0.2" id="56T-fQ-11N"/>
+                                        <constraint firstItem="xhF-e3-PLG" firstAttribute="height" secondItem="qZk-zR-Cdf" secondAttribute="height" multiplier="0.2" id="RZS-Y9-U6k"/>
+                                        <constraint firstItem="HAh-oV-3Gx" firstAttribute="height" secondItem="qZk-zR-Cdf" secondAttribute="height" multiplier="0.4" id="WgG-gB-G6o"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="V8x-Cl-Zm0" firstAttribute="width" secondItem="BnN-aj-wLF" secondAttribute="width" multiplier="0.4" id="Jit-gu-u0A"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" red="0.95294117647058818" green="0.95686274509803915" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="5RH-ZK-SdU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="GU6-AG-EwR"/>
+                <constraint firstItem="5RH-ZK-SdU" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="QQz-Cs-153"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="5RH-ZK-SdU" secondAttribute="bottom" constant="5" id="Wqq-LC-raJ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5RH-ZK-SdU" secondAttribute="trailing" constant="5" id="ugx-Pg-Wbt"/>
+            </constraints>
+            <point key="canvasLocation" x="-79" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="pawprint.fill" catalog="system" width="128" height="112"/>
+    </resources>
+</document>

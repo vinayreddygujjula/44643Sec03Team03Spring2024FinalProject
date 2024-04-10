@@ -16,9 +16,9 @@ class PetsVC: UIViewController, UIScrollViewDelegate {
     
     private func showMenu() {
         data.forEach { item in
-            let view = PetViewVC()
+            let view = PetVC()
             view.pet = item
-            if ((item.photos?.first?.small?.isEmpty) == nil), let thumbnailImage = item.photos?.first?.small{
+            if item.photos != nil, let thumbnailImage = item.photos?.first?.small{
                 view.PetIV.sd_setImage(with: URL(string: thumbnailImage))
             }
             view.NameLBL.text = item.name
@@ -29,13 +29,14 @@ class PetsVC: UIViewController, UIScrollViewDelegate {
             tapGesture.numberOfTapsRequired = 1
             view.addGestureRecognizer(tapGesture)
             self.petStackView.addArrangedSubview(view)
+            Common.applyBorderProperties(to: view)
         }
     }
     
     @objc private func handleTap(_ recognizer: UITapGestureRecognizer){
         switch (recognizer.state){
         case .ended:
-            guard let itemView = recognizer.view as? PetViewVC else {return}
+            guard let itemView = recognizer.view as? PetVC else {return}
             self.performSegue(withIdentifier: "petsToPetDetail", sender: itemView)
         default:
             assert (false, "Invalid segue!")
@@ -45,7 +46,7 @@ class PetsVC: UIViewController, UIScrollViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "petsToPetDetail",
            let destinationVC = segue.destination as? PetDetailsVC,
-           let pet = sender as? PetViewVC {
+           let pet = sender as? PetVC {
             destinationVC.data = pet.pet
         }
     }
