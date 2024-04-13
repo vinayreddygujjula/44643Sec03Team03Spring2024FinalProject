@@ -29,6 +29,7 @@
 		FF3D25A02BB7AA2D0074BFBC /* PetControlDescriptionPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3D259F2BB7AA2D0074BFBC /* PetControlDescriptionPageVC.swift */; };
 		FFA140182BCA1AE800568177 /* findVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA140172BCA1AE800568177 /* findVC.swift */; };
 		FFA1401A2BCA241900568177 /* PetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA140192BCA241900568177 /* PetListViewController.swift */; };
+		FFA1401C2BCA394C00568177 /* AddPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA1401B2BCA394B00568177 /* AddPetViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		FF3D259F2BB7AA2D0074BFBC /* PetControlDescriptionPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetControlDescriptionPageVC.swift; sourceTree = "<group>"; };
 		FFA140172BCA1AE800568177 /* findVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = findVC.swift; sourceTree = "<group>"; };
 		FFA140192BCA241900568177 /* PetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListViewController.swift; sourceTree = "<group>"; };
+		FFA1401B2BCA394B00568177 /* AddPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				A12990922B9A986A004955FF /* ViewControllers */,
 				A58ECF322B86C19200CD7858 /* Main.storyboard */,
 				FFA140172BCA1AE800568177 /* findVC.swift */,
+				FFA1401B2BCA394B00568177 /* AddPetViewController.swift */,
 				FFA140192BCA241900568177 /* PetListViewController.swift */,
 				FF3D259F2BB7AA2D0074BFBC /* PetControlDescriptionPageVC.swift */,
 				A1660B982B9C401D00C722FE /* CommonClass.swift */,
@@ -210,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF3D25A02BB7AA2D0074BFBC /* PetControlDescriptionPageVC.swift in Sources */,
+				FFA1401C2BCA394C00568177 /* AddPetViewController.swift in Sources */,
 				A58ECF312B86C19200CD7858 /* LoginVC.swift in Sources */,
 				A12990962B9A98DC004955FF /* HomeVC.swift in Sources */,
 				FFA140182BCA1AE800568177 /* findVC.swift in Sources */,
