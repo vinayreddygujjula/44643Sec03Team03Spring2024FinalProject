@@ -11,6 +11,7 @@
 		5366578E2BC08A230016EB4E /* ProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366578D2BC08A230016EB4E /* ProductsVC.swift */; };
 		536657902BC08A340016EB4E /* PetsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366578F2BC08A340016EB4E /* PetsVC.swift */; };
 		5369986F2B9D471E001F7EA8 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5369986E2B9D471E001F7EA8 /* ResetPasswordVC.swift */; };
+		5382DF2B2BC8F37200A2B17D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5382DF2A2BC8F37200A2B17D /* TableViewCell.swift */; };
 		53E5ED482BC66C04003B716F /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E5ED472BC66C04003B716F /* AuthenticationModel.swift */; };
 		A12990962B9A98DC004955FF /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12990932B9A98DC004955FF /* HomeVC.swift */; };
 		A12A1BF62BC275F400D2E132 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12A1BF52BC275F400D2E132 /* Pet.swift */; };
@@ -58,6 +59,7 @@
 		5366578D2BC08A230016EB4E /* ProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsVC.swift; sourceTree = "<group>"; };
 		5366578F2BC08A340016EB4E /* PetsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsVC.swift; sourceTree = "<group>"; };
 		5369986E2B9D471E001F7EA8 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
+		5382DF2A2BC8F37200A2B17D /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		53E5ED472BC66C04003B716F /* AuthenticationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthenticationModel.swift; path = "PET MART/Models/AuthenticationModel.swift"; sourceTree = SOURCE_ROOT; };
 		A12990932B9A98DC004955FF /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		A12A1BF52BC275F400D2E132 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				A12A1BFA2BC28BA200D2E132 /* CommonFiles */,
 				A1F1A8F92BC654A4007211DF /* APIFiles */,
 				A58ECF322B86C19200CD7858 /* Main.storyboard */,
+				5382DF2A2BC8F37200A2B17D /* TableViewCell.swift */,
 				A58ECF352B86C19300CD7858 /* Assets.xcassets */,
 				A58ECF372B86C19300CD7858 /* LaunchScreen.storyboard */,
 				A58ECF3A2B86C19300CD7858 /* Info.plist */,
@@ -324,6 +327,7 @@
 				A12990962B9A98DC004955FF /* HomeVC.swift in Sources */,
 				A19E36D92BC2521B00BC01B1 /* PetDetailsVC.swift in Sources */,
 				A1F2EAE02BC31295008279CD /* ProductVC.swift in Sources */,
+				5382DF2B2BC8F37200A2B17D /* TableViewCell.swift in Sources */,
 				A1D31F722BC3165500F613EB /* ProductsAPI.swift in Sources */,
 				5366578C2BC08A110016EB4E /* CartVC.swift in Sources */,
 				A58ECF2D2B86C19200CD7858 /* AppDelegate.swift in Sources */,
