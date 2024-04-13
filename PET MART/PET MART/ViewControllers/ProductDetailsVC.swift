@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ProductDetailsVC: UIViewController {
     
@@ -22,8 +23,38 @@ class ProductDetailsVC: UIViewController {
     var imageIndex = 0
     var data = Product(id: 0, name: "", price: "", image1: "", image2: "", image3: "", rating: "", thumbnail: "", description: "")
     
+    let db = Firestore.firestore()
     @IBAction func addToCart(_ sender: UIButton) {
         self.buyBTN.isUserInteractionEnabled = true
+        
+        guard let currentUserID = Auth.auth().currentUser?.uid else {
+               return
+           }
+           
+        let productID = "\(data.id)"
+        let productPrice = Double(data.price!) ?? 0
+        let productImage = "\(data.thumbnail?.description)"
+        let productName = "\(data.name)"
+           
+        savePurchase(productID: productID, productPrice: productPrice, userID: currentUserID, productImage: productImage,productName: productName)
+       }
+    
+    func savePurchase(productID: String, productPrice: Double, userID: String, productImage: String, productName: String) {
+        db.collection("CartProducts").addDocument(data: [
+            "productID": productID,
+            "productPrice": productPrice,
+            "userID": userID,
+            "productImage": productImage,
+            "productName": productName
+            
+        ]) { error in
+            if let error = error {
+                print("Error adding document: \(error)")
+            } else {
+                print("Document added successfully")
+            }
+        }
+    
     }
     
     @IBAction func buy(_ sender: UIButton) {
