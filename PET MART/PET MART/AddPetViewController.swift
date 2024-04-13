@@ -15,7 +15,7 @@ class AddPetViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Setup any additional setup after loading the view.
+        
     }
 
     @IBAction func addPetButtonTapped(_ sender: UIButton) {
