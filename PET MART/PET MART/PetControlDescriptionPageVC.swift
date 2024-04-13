@@ -6,7 +6,12 @@
 //
 
 import UIKit
-
+struct pet {
+    var name: String
+    var description: String
+    var price: Double
+    var imageName: String
+}
 class PetControlDescriptionPageVC: UIViewController {
 
     override func viewDidLoad() {

@@ -297,10 +297,26 @@
             </objects>
             <point key="canvasLocation" x="2305" y="-2"/>
         </scene>
+        <!--Pet Control Description PageVC-->
+        <scene sceneID="RkC-Y0-Lmg">
+            <objects>
+                <viewController id="QP1-aQ-no2" customClass="PetControlDescriptionPageVC" customModule="PET_MART" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KBE-pn-ABc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="mQR-zW-5yq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hEN-6S-wbh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0hQ-bt-zs1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3207" y="-691"/>
+        </scene>
         <!--Title-->
         <scene sceneID="jPK-nm-gf9">
             <objects>
-                <viewController id="TWr-wn-mup" sceneMemberID="viewController">
+                <viewController id="TWr-wn-mup" customClass="PetListViewController" customModule="PET_MART" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ovg-1g-TDa">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -487,6 +503,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="tND-Sn-kaP"/>
+                    <connections>
+                        <segue destination="QP1-aQ-no2" kind="show" id="Qfv-KW-qAF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lr8-JZ-f6M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
