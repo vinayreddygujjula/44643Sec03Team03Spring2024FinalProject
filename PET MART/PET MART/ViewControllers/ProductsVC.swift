@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+import AVFoundation
 
 class ProductsVC: UIViewController, UIScrollViewDelegate {
 
@@ -14,14 +15,13 @@ class ProductsVC: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var productStackView: UIStackView!
     
     var data : [Product] = []
+    let buttonClickSound : SystemSoundID = 1104
     
     private func showMenu(){
         data.forEach { item in
             let view = ProductVC()
             view.product = item
-            if item.thumbnail != nil, let thumbnailImage = item.thumbnail{
-                view.ProductIV.sd_setImage(with: URL(string: thumbnailImage))
-            }
+            view.ProductIV.sd_setImage(with: URL(string: item.thumbnail))
             view.nameLBL.text = item.name
             view.descriptionLBL.text = item.description
             if item.rating != nil, let rating = item.rating, let ratingLBL = view.ratingLBL.text{
@@ -47,6 +47,7 @@ class ProductsVC: UIViewController, UIScrollViewDelegate {
         default:
             assert (false, "Invalid segue!")
         }
+        AudioServicesPlaySystemSound(buttonClickSound)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

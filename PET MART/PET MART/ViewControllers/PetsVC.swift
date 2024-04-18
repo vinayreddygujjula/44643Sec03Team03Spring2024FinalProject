@@ -7,12 +7,14 @@
 
 import UIKit
 import SDWebImage
+import AVFoundation
 
 class PetsVC: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var petScrollView: UIScrollView!
     @IBOutlet weak var petStackView: UIStackView!
     var data : [Animal] = []
+    let buttonClickSound : SystemSoundID = 1104
     
     private func showMenu() {
         data.forEach { item in
@@ -41,6 +43,7 @@ class PetsVC: UIViewController, UIScrollViewDelegate {
         default:
             assert (false, "Invalid segue!")
         }
+        AudioServicesPlaySystemSound(buttonClickSound)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

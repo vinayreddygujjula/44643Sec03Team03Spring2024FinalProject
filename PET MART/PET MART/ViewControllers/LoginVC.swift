@@ -8,10 +8,12 @@
 import UIKit
 import Lottie
 import Firebase
+import AVFoundation
 
 class LoginVC: UIViewController {
     
     
+    @IBOutlet weak var messageLBL: UILabel!
     @IBOutlet weak var LaunchLAV: LottieAnimationView!
     {
         didSet{
@@ -31,6 +33,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     
+    var buttonClickSound : SystemSoundID = 1104
     
     @IBAction func loginAction(_ sender: UIButton) {
         
@@ -50,20 +53,25 @@ class LoginVC: UIViewController {
         Task{
             do{
                 try await AuthenticationManager.shared.signIn(email: email, password: password)
+                self.performSegue(withIdentifier: "loginToHome", sender: sender)
             }
             catch{
                 print(error.localizedDescription)
+                self.messageLBL.text = "Invalid credentials!"
+                return
             }
         }
         self.performSegue(withIdentifier: "loginToHome", sender: sender)
+        AudioServicesPlaySystemSound(buttonClickSound)
+
     }
     
     @IBAction func signUpAction(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "signup", sender: sender)
+        AudioServicesPlaySystemSound(buttonClickSound)
     }
     
     @IBAction func resetPasswordAction(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "reset", sender: sender)
+        AudioServicesPlaySystemSound(buttonClickSound)
     }
     
     

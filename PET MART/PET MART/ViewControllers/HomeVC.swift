@@ -7,15 +7,14 @@
 
 import UIKit
 import Firebase
+import AVFoundation
 
 class HomeVC: UIViewController {
     
-    @IBOutlet weak var PetBTN: UIButton!
-    @IBOutlet weak var ProductBTN: UIButton!
-    
     @IBOutlet weak var userNameLBL: UILabel!
     
-    
+    let logoutSound : SystemSoundID = 1152
+    let buttonClickSound : SystemSoundID = 1104
     
     @IBAction func logout(_ sender: UIBarButtonItem) {
         Task{
@@ -27,7 +26,17 @@ class HomeVC: UIViewController {
             }
         }
         self.performSegue(withIdentifier: "homeToLogin", sender: sender)
+        AudioServicesPlaySystemSound(logoutSound)
     }
+    
+    @IBAction func navigateToPetsScreen(_ sender: UIButton) {
+        AudioServicesPlaySystemSound(buttonClickSound)
+    }
+    
+    @IBAction func navigateToProductScreen(_ sender: UIButton) {
+        AudioServicesPlaySystemSound(buttonClickSound)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

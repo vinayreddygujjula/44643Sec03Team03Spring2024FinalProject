@@ -8,57 +8,87 @@
 import UIKit
 import Firebase
 import SDWebImage
-
+import AVFoundation
+import Social
 
 class CartVC: UIViewController,UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet weak var productTV: UITableView!
     @IBOutlet weak var messageLBL: UILabel!
-    @IBOutlet weak var priceLBL: UILabel!
-    
     
     let db = Firestore.firestore()
     let currentUserID = Auth.auth().currentUser?.uid
+    let clearSound : SystemSoundID = 1152
+    let buttonClickSound : SystemSoundID = 1104
     
     struct CartItem {
         let productID: String
         let productPrice: Double
         let productName: String
         let productImage: String
+        var cartCount: Int
     }
     
-    var cartItems: [CartItem] = []
-    var totalPrice: Double = 0
+    var cartItems: [CartItem] = []{
+        didSet{
+            self.messageLBL.isHidden = !cartItems.isEmpty
+        }
+    }
+    var totalPrice: Double = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.productTV.delegate = self
         self.productTV.dataSource = self
-        Task{
-           try await fetchCartDetails()
+        resetCart()
+    }
+    
+    func calculateTotalPrice() async{
+        guard let userID = currentUserID else { return }
+        var documents: [QueryDocumentSnapshot] = []
+        do{
+            documents = try await db.collection("CartProducts")
+                .whereField("userID", isEqualTo: userID).getDocuments().documents
         }
-        
+        catch{
+            print(error.localizedDescription)
+            return
+        }
+        for i in 0..<documents.count{
+            if let productPrice = documents[i]["productPrice"] as? Double,
+               let cartCount = documents[i]["cartCount"] as? Int{
+                totalPrice = totalPrice + (productPrice * Double(cartCount))
+                print("total price \(totalPrice)")
+            }
+        }
     }
     
     @IBAction func buyCart(_ sender: UIButton) {
         if(self.cartItems.isEmpty){ return }
-        let confirmAlert = UIAlertController(title: "Confirm Order", message: "Do you want to make the total purchase of amount $\(totalPrice)?", preferredStyle: .alert)
+        let TotalPrice = String(format: "%.2f", totalPrice)
+        let confirmAlert = UIAlertController(title: "Confirm Order", message: "Do you want to make the total purchase of amount  $\(TotalPrice)?", preferredStyle: .alert)
         confirmAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         confirmAlert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { _ in
             let cartlist = self.cartItems
+            var productNames = []
             for i in 0..<cartlist.count {
                 let productID = Int(cartlist[i].productID)!
+                productNames.append(cartlist[i].productName)
                 Task{
                     await self.deleteCartProducts(productID: productID)
                 }
             }
-            self.removeitemsfromcart()
+            self.resetCart()
             let thanksmsg = UIAlertController(title: "Thank You", message: "Thanks for shopping with us!", preferredStyle: .alert)
             thanksmsg.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            thanksmsg.addAction(UIAlertAction(title: "Share", style: .default, handler: { _ in
+                let activityViewController = UIActivityViewController(activityItems: productNames, applicationActivities: nil)
+                self.present(activityViewController, animated: true)
+            }))
             self.present(thanksmsg, animated: true, completion: nil)
         }))
         self.present(confirmAlert, animated: true, completion: nil)
-        self.productTV.reloadData()
+        AudioServicesPlaySystemSound(buttonClickSound)
     }
     
     @IBAction func clearCart(_ sender: UIButton) {
@@ -75,12 +105,15 @@ class CartVC: UIViewController,UITableViewDataSource, UITableViewDelegate {
                     await self.deleteCartProducts(productID: productID)
                 }
             }
+            self.productTV.reloadData()
             let clearAlert = UIAlertController(title: "Clear Cart", message: "Your cart has been cleared", preferredStyle: .alert)
             clearAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(clearAlert, animated: true, completion: nil)
+            self.resetCart()
         }))
         self.present(clearAction, animated: true, completion: nil)
-        self.removeitemsfromcart()
+        
+        AudioServicesPlaySystemSound(clearSound)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -90,66 +123,68 @@ class CartVC: UIViewController,UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "productCell", for: indexPath) as! TableViewCell
         let item = cartItems[indexPath.row]
-        cell.setCellData(thumbnail: item.productImage, title: item.productName, price: "\(item.productPrice)")
+        
+        var thumbnailImage = item.productImage.replacingOccurrences(of: "Optional(\"", with: "").replacingOccurrences(of: "\")", with: "")
+        cell.setCellData(thumbnail: thumbnailImage, title: item.productName, price: "\(item.productPrice)", cartCount: item.cartCount)
+        cell.productID = item.productID
+        Common.applyBorderProperties(to: cell)
+        cell.contentView.frame.inset(by: UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10))
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 120
     }
     
     func fetchCartDetails() async throws{
+        guard let userID = currentUserID else { return }
         var documents: [QueryDocumentSnapshot] = []
         do{
             documents = try await db.collection("CartProducts")
-                .whereField("userID", isEqualTo: currentUserID).getDocuments().documents
+                .whereField("userID", isEqualTo: userID).getDocuments().documents
         }
         catch{
-            print("--------")
+            print(error.localizedDescription)
             return
         }
         for i in 0..<documents.count{
             if let productID = documents[i]["productID"] as? String,
                let productPrice = documents[i]["productPrice"] as? Double,
                let productName = documents[i]["productName"] as? String,
+               let cartCount = documents[i]["cartCount"] as? Int,
                let productImage = documents[i]["productImage"] as? String {
-                let cartItem = CartItem(productID: productID, productPrice: productPrice, productName: productName, productImage: productImage)
+                let cartItem = CartItem(productID: productID, productPrice: productPrice, productName: productName, productImage: productImage, cartCount: cartCount)
                 self.cartItems.append(cartItem)
-                self.totalPrice += productPrice
-                self.priceLBL.text = String(format: "Total price: \(totalPrice)")
+                self.totalPrice = self.totalPrice + (productPrice * Double(cartCount))
+                print(cartCount)
             }
         }
+        
         self.productTV.reloadData()
     }
     
-    func removeitemsfromcart() {
+    func resetCart() {
+        cartItems = []
+        Task{
+            try await self.fetchCartDetails()
+        }
         productTV.reloadData()
         messageLBL.isHidden = !cartItems.isEmpty
-        messageLBL.text = cartItems.isEmpty ? "Your cart is empty" : ""
     }
     
     func deleteCartProducts(productID : Int) async {
+        var key = "\(String(describing: currentUserID))-\(productID)"
+        let docID = key.replacingOccurrences(of: "Optional(\"", with: "").replacingOccurrences(of: "\")", with: "")
         do{
-            print("-------------------")
-            if let unwrappedString = currentUserID
-            {
-                print(unwrappedString)
-            }
-            print(productID)
-            print("-------------------")
-            let documents = try await db.collection("CartProducts")
-                .whereField("userID", isEqualTo: currentUserID)
-                .whereField("productID", isEqualTo: productID)
-                .getDocuments().documents
-            print("-------------------")
-            print(documents)
-            print("-------------------")
-            //try await db.collection("CartProducts").getDocuments().documents[documents].delete()
+            try await db.collection("CartProducts").document(docID).delete()
         }
         catch {
             print(error.localizedDescription)
         }
-        self.productTV.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat(5)
     }
 }
 

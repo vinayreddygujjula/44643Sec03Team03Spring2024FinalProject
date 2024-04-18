@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import AVFoundation
 
 class ProductDetailsVC: UIViewController {
     
@@ -22,43 +23,53 @@ class ProductDetailsVC: UIViewController {
     var productImages = [String]()
     var imageIndex = 0
     var data = Product(id: 0, name: "", price: "", image1: "", image2: "", image3: "", rating: "", thumbnail: "", description: "")
-    
+    var buttonClickSound : SystemSoundID = 1104
     let db = Firestore.firestore()
+    
     @IBAction func addToCart(_ sender: UIButton) {
-        self.buyBTN.isUserInteractionEnabled = true
         
         guard let currentUserID = Auth.auth().currentUser?.uid else {
-               return
-           }
-           
+            return
+        }
+        
         let productID = "\(data.id)"
         let productPrice = Double(data.price!) ?? 0
-        let productImage = "\(data.thumbnail?.description)"
+        let productImage = "\(data.thumbnail.description)"
         let productName = "\(data.name)"
-           
-        savePurchase(productID: productID, productPrice: productPrice, userID: currentUserID, productImage: productImage,productName: productName)
-       }
-    
-    func savePurchase(productID: String, productPrice: Double, userID: String, productImage: String, productName: String) {
-        db.collection("CartProducts").addDocument(data: [
-            "productID": productID,
-            "productPrice": productPrice,
-            "userID": userID,
-            "productImage": productImage,
-            "productName": productName
-            
-        ]) { error in
-            if let error = error {
-                print("Error adding document: \(error)")
-            } else {
-                print("Document added successfully")
-            }
+        
+        Task{
+            await savePurchase(productID: productID, productPrice: productPrice, userID: currentUserID, productImage: productImage,productName: productName)
         }
+        let alertmsg = UIAlertController(title: "",message: "Added to cart ✅",preferredStyle: .alert)
+        alertmsg.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+        self.present(alertmsg, animated: true, completion: nil)
+        AudioServicesPlaySystemSound(buttonClickSound)
+    }
     
+    func savePurchase(productID: String, productPrice: Double, userID: String, productImage: String, productName: String) async {
+        var cartCount = 0
+        do {
+            if try await !db.collection("CartProducts").whereField("productID", isEqualTo: productID).getDocuments().isEmpty{
+                var data = try await db.collection("CartProducts").whereField("productID", isEqualTo: productID).getDocuments().documents.first?.data()
+                cartCount = data!["cartCount"] as! Int
+            }
+            print("------------- cartCount ",cartCount)
+            try await db.collection("CartProducts").document("\(userID)-\(productID)").setData([
+                "productID": productID,
+                "productPrice": productPrice,
+                "userID": userID,
+                "productImage": productImage,
+                "productName": productName,
+                "cartCount": cartCount + 1
+            ])
+        }
+        catch{
+            print(error.localizedDescription)
+        }
     }
     
     @IBAction func buy(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "productDetailsToCart", sender: sender)
+        AudioServicesPlaySystemSound(buttonClickSound)
     }
     
     func setupImageView() {
@@ -115,19 +126,18 @@ class ProductDetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.buyBTN.isUserInteractionEnabled = false
         showPetDetails()
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
