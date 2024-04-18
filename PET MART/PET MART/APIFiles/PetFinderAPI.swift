@@ -76,32 +76,6 @@ class APIService {
         }
         return []
     }
-    
-//    func fetchAnimalDataByID(id : Int) async throws -> Animal {
-//        let token = try await APIService.shared.getAccessToken()
-//        guard let url = URL(string: "https://api.petfinder.com/v2/animals/\(id)") else {
-//            throw NetworkError.invalidURL
-//        }
-//        var urlRequest = URLRequest(url: url)
-//        urlRequest.httpMethod = "GET"
-//        urlRequest.addValue("Bearer " + token.accessToken, forHTTPHeaderField: "Authorization")
-//        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//        let (data, httpResponse) = try await URLSession.shared.data(for: urlRequest)
-//        guard let httpResponse = httpResponse as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-//            throw NetworkError.invalidResponse
-//        }
-//        let decoder = JSONDecoder()
-//        decoder.keyDecodingStrategy = .convertFromSnakeCase
-//        let resultsX = Animal.init(id: 0, type: "", breeds: Breeds(primary: "", secondary: "", mixed: false, unknown: false), gender: "", name: "", description: "", photos: [Photos.init(small: "", medium: "", large: "", full: "")], contact: Contact(email: "", phone: "", address: Address(address1: "", address2: "", city: "", state: "", postcode: "", country: "")))
-//        do{
-//            let results = try decoder.decode(Animal.self, from: data)
-//            return results
-//        }
-//        catch{
-//            print("------ \(error)")
-//        }
-//        return resultsX
-//    }
 }
 
 struct Token: Codable {

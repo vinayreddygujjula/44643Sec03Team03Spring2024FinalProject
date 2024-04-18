@@ -15,6 +15,6 @@ struct Product: Codable {
     let image2: String?
     let image3: String?
     let rating: String?
-    let thumbnail: String?
+    let thumbnail: String
     let description: String?
 }
