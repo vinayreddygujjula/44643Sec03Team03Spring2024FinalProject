@@ -44,6 +44,7 @@ class CartVC: UIViewController,UITableViewDataSource, UITableViewDelegate {
     }
     
     func calculateTotalPrice() async{
+        totalPrice = 0.0
         guard let userID = currentUserID else { return }
         var documents: [QueryDocumentSnapshot] = []
         do{
@@ -59,35 +60,47 @@ class CartVC: UIViewController,UITableViewDataSource, UITableViewDelegate {
                let cartCount = documents[i]["cartCount"] as? Int{
                 totalPrice = totalPrice + (productPrice * Double(cartCount))
                 print("total price \(totalPrice)")
+                print(cartItems)
+                cartItems[i].cartCount = cartCount
             }
         }
     }
     
     @IBAction func buyCart(_ sender: UIButton) {
+        
         if(self.cartItems.isEmpty){ return }
-        let TotalPrice = String(format: "%.2f", totalPrice)
-        let confirmAlert = UIAlertController(title: "Confirm Order", message: "Do you want to make the total purchase of amount  $\(TotalPrice)?", preferredStyle: .alert)
-        confirmAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        confirmAlert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { _ in
-            let cartlist = self.cartItems
-            var productNames = []
-            for i in 0..<cartlist.count {
-                let productID = Int(cartlist[i].productID)!
-                productNames.append(cartlist[i].productName)
-                Task{
-                    await self.deleteCartProducts(productID: productID)
+        
+        Task{
+            await calculateTotalPrice()
+            
+            let TotalPrice = String(format: "%.2f", totalPrice)
+            
+            let confirmAlert = UIAlertController(title: "Confirm Order", message: "Do you want to make the total purchase of amount  $\(TotalPrice)?", preferredStyle: .alert)
+            confirmAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            confirmAlert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { _ in
+                let cartlist = self.cartItems
+                var productNames = []
+                for i in 0..<cartlist.count {
+                    let productID = Int(cartlist[i].productID)!
+                    productNames.append(cartlist[i].productName)
+                    Task{
+                        await self.deleteCartProducts(productID: productID)
+                    }
                 }
-            }
-            self.resetCart()
-            let thanksmsg = UIAlertController(title: "Thank You", message: "Thanks for shopping with us!", preferredStyle: .alert)
-            thanksmsg.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            thanksmsg.addAction(UIAlertAction(title: "Share", style: .default, handler: { _ in
-                let activityViewController = UIActivityViewController(activityItems: productNames, applicationActivities: nil)
-                self.present(activityViewController, animated: true)
+                self.resetCart()
+                let thanksmsg = UIAlertController(title: "Thank You", message: "Thanks for shopping with us!", preferredStyle: .alert)
+                thanksmsg.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                thanksmsg.addAction(UIAlertAction(title: "Share", style: .default, handler: { _ in
+                    let activityViewController = UIActivityViewController(activityItems: productNames, applicationActivities: nil)
+                    self.present(activityViewController, animated: true)
+                }))
+                self.present(thanksmsg, animated: true, completion: nil)
             }))
-            self.present(thanksmsg, animated: true, completion: nil)
-        }))
-        self.present(confirmAlert, animated: true, completion: nil)
+            
+            self.present(confirmAlert, animated: true, completion: nil)
+        }
+        
+        
         AudioServicesPlaySystemSound(buttonClickSound)
     }
     
@@ -111,6 +124,7 @@ class CartVC: UIViewController,UITableViewDataSource, UITableViewDelegate {
             self.present(clearAlert, animated: true, completion: nil)
             self.resetCart()
         }))
+        
         self.present(clearAction, animated: true, completion: nil)
         
         AudioServicesPlaySystemSound(clearSound)
@@ -123,8 +137,7 @@ class CartVC: UIViewController,UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "productCell", for: indexPath) as! TableViewCell
         let item = cartItems[indexPath.row]
-        
-        var thumbnailImage = item.productImage.replacingOccurrences(of: "Optional(\"", with: "").replacingOccurrences(of: "\")", with: "")
+        let thumbnailImage = item.productImage.replacingOccurrences(of: "Optional(\"", with: "").replacingOccurrences(of: "\")", with: "")
         cell.setCellData(thumbnail: thumbnailImage, title: item.productName, price: "\(item.productPrice)", cartCount: item.cartCount)
         cell.productID = item.productID
         Common.applyBorderProperties(to: cell)
@@ -137,7 +150,9 @@ class CartVC: UIViewController,UITableViewDataSource, UITableViewDelegate {
     }
     
     func fetchCartDetails() async throws{
+        
         guard let userID = currentUserID else { return }
+        
         var documents: [QueryDocumentSnapshot] = []
         do{
             documents = try await db.collection("CartProducts")
@@ -156,6 +171,7 @@ class CartVC: UIViewController,UITableViewDataSource, UITableViewDelegate {
                 let cartItem = CartItem(productID: productID, productPrice: productPrice, productName: productName, productImage: productImage, cartCount: cartCount)
                 self.cartItems.append(cartItem)
                 self.totalPrice = self.totalPrice + (productPrice * Double(cartCount))
+                print(totalPrice)
                 print(cartCount)
             }
         }
@@ -165,6 +181,7 @@ class CartVC: UIViewController,UITableViewDataSource, UITableViewDelegate {
     
     func resetCart() {
         cartItems = []
+        totalPrice = 0.0
         Task{
             try await self.fetchCartDetails()
         }
@@ -173,7 +190,7 @@ class CartVC: UIViewController,UITableViewDataSource, UITableViewDelegate {
     }
     
     func deleteCartProducts(productID : Int) async {
-        var key = "\(String(describing: currentUserID))-\(productID)"
+        let key = "\(String(describing: currentUserID))-\(productID)"
         let docID = key.replacingOccurrences(of: "Optional(\"", with: "").replacingOccurrences(of: "\")", with: "")
         do{
             try await db.collection("CartProducts").document(docID).delete()
@@ -185,6 +202,31 @@ class CartVC: UIViewController,UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return CGFloat(5)
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let currentUserID = Auth.auth().currentUser?.uid
+        let key = "\(String(describing: currentUserID))-\(cartItems[indexPath.row].productID)"
+        let docID = key.replacingOccurrences(of: "Optional(\"", with: "").replacingOccurrences(of: "\")", with: "")
+        let removeFromCartAction = UIContextualAction(style: .normal, title: "-"){ [weak self] (_, _, completion) in
+            Task{
+                await self?.removeProductFromCart(docID: docID)
+                self?.cartItems.remove(at: indexPath.row)
+                self?.productTV.reloadData()
+            }
+            completion(true)
+        }
+        removeFromCartAction.backgroundColor = UIColor(named: "red")
+        return UISwipeActionsConfiguration(actions: [removeFromCartAction])
+    }
+    
+    func removeProductFromCart(docID : String) async{
+        do{
+            try await db.collection("CartProducts").document(docID).delete()
+        }
+        catch {
+            print(error.localizedDescription)
+        }
     }
 }
 

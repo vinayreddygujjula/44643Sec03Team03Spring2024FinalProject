@@ -15,6 +15,7 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var priceLBL: UILabel!
     @IBOutlet weak var productIV: UIImageView!
     @IBOutlet weak var productCountLBL: UILabel!
+    @IBOutlet weak var cartStepper: UIStepper!
     
     var productID = ""
     var db = Firestore.firestore()
@@ -35,29 +36,29 @@ class TableViewCell: UITableViewCell {
         let docID = key.replacingOccurrences(of: "Optional(\"", with: "").replacingOccurrences(of: "\")", with: "")
         Task {
             await updateProduct(documentID: docID, count: cartCount)
-            await CartVC().calculateTotalPrice()
         }
     }
     
     func updateProduct(documentID: String, count : Int) async{
         print(documentID)
-        if count == 0 {
-            do{
-                try await db.collection("CartProducts").document(documentID).delete()
-            }
-            catch {
-                print(error.localizedDescription)
-            }
+        //        if count == 0 {
+        //            do{
+        //                try await db.collection("CartProducts").document(documentID).delete()
+        //            }
+        //            catch {
+        //                print(error.localizedDescription)
+        //            }
+        //        }
+        //        else{
+        do {
+            try await db.collection("CartProducts").document(documentID).updateData([
+                "cartCount" : count
+            ])
         }
-        else{
-            do {
-                try await db.collection("CartProducts").document(documentID).updateData([
-                    "cartCount" : count
-                ])
-            } catch {
-                print("Error updating cart count: \(error)")
-            }
+        catch {
+            print("Error updating cart count: \(error)")
         }
+        //        }
         
     }
     
@@ -66,6 +67,7 @@ class TableViewCell: UITableViewCell {
         self.priceLBL.text = "$\(price)"
         self.productIV.sd_setImage(with: URL(string: thumbnail), placeholderImage: UIImage(named: "placeholder"))
         self.productCountLBL.text = "\(cartCount)"
+        self.cartStepper.value = Double(cartCount)
     }
     
     override func awakeFromNib() {

@@ -61,7 +61,7 @@ class LoginVC: UIViewController {
                 return
             }
         }
-        self.performSegue(withIdentifier: "loginToHome", sender: sender)
+       // self.performSegue(withIdentifier: "loginToHome", sender: sender)
         AudioServicesPlaySystemSound(buttonClickSound)
 
     }
