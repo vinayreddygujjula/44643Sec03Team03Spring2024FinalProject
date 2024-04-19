@@ -17,13 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x3J-BJ-Twz" userLabel="LaunchLAV" customClass="LottieAnimationView" customModule="Lottie">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="petMartLaunchLA"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="b95-yQ-Yos" userLabel="BigContainerSV">
                                 <rect key="frame" x="25" y="128" width="343" height="665"/>
                                 <subviews>
@@ -120,23 +113,30 @@
                                     <constraint firstItem="r9d-pe-p6F" firstAttribute="height" secondItem="b95-yQ-Yos" secondAttribute="height" multiplier="0.15" id="rLg-ex-6Ut"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rbt-uf-bOu" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="petMartLaunchLA"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.9529411793" green="0.95686274770000002" blue="0.87450981139999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="x3J-BJ-Twz" secondAttribute="trailing" id="2gw-Hk-2fy"/>
-                            <constraint firstAttribute="bottom" secondItem="x3J-BJ-Twz" secondAttribute="bottom" id="7or-Xn-NO3"/>
+                            <constraint firstItem="Rbt-uf-bOu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="RQQ-aQ-ex0"/>
                             <constraint firstItem="b95-yQ-Yos" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="TX2-F3-01d"/>
-                            <constraint firstItem="x3J-BJ-Twz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dI2-Jk-N8s"/>
+                            <constraint firstAttribute="bottom" secondItem="Rbt-uf-bOu" secondAttribute="bottom" id="V6L-gi-s0y"/>
+                            <constraint firstAttribute="trailing" secondItem="Rbt-uf-bOu" secondAttribute="trailing" id="W6a-N7-jmK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b95-yQ-Yos" secondAttribute="trailing" constant="25" id="iFf-ub-Dsy"/>
-                            <constraint firstItem="x3J-BJ-Twz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="q94-2D-aWS"/>
                             <constraint firstItem="b95-yQ-Yos" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="qkh-7b-Ge5"/>
+                            <constraint firstItem="Rbt-uf-bOu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rtS-dW-3E8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="b95-yQ-Yos" secondAttribute="bottom" constant="25" id="xeN-Tw-Rvg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WoO-h9-rf0"/>
                     <connections>
-                        <outlet property="LaunchLAV" destination="x3J-BJ-Twz" id="jsF-1T-9G3"/>
+                        <outlet property="LaunchLAV" destination="Rbt-uf-bOu" id="mgl-M3-mzc"/>
                         <outlet property="emailTF" destination="zgd-Vc-LDD" id="GTT-B3-c7n"/>
                         <outlet property="messageLBL" destination="bfS-2n-3Ob" id="zJk-Ls-40Z"/>
                         <outlet property="passwordTF" destination="vSB-sn-wze" id="eLh-ee-OA7"/>
