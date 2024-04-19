@@ -726,7 +726,7 @@
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="fill" contentVerticalAlignment="bottom" value="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Xwu-5K-JP6">
+                                                                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="fill" contentVerticalAlignment="bottom" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Xwu-5K-JP6">
                                                                             <rect key="frame" x="0.0" y="112.33333333333331" width="99.666666666666671" height="48"/>
                                                                             <connections>
                                                                                 <action selector="changeCartCount:" destination="zWn-ap-cI0" eventType="valueChanged" id="Efg-Jg-UX3"/>
@@ -754,6 +754,7 @@
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" red="0.96470588450000005" green="0.95686274770000002" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
+                                                    <outlet property="cartStepper" destination="Xwu-5K-JP6" id="YeA-Fa-deu"/>
                                                     <outlet property="priceLBL" destination="FgG-2F-bGU" id="uBm-1g-UVH"/>
                                                     <outlet property="productCountLBL" destination="Gic-7b-fi4" id="XEh-my-44a"/>
                                                     <outlet property="productIV" destination="4m8-ZD-sYY" id="S9E-32-PQp"/>
